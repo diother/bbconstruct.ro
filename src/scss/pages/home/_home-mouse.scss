@@ -1,0 +1,90 @@
+@include laptop {
+    .mouse-cursor.hero-cursor {
+        height: 200px;
+        width: 200px;
+        left: -100px;
+        top: -100px;
+        background: none;
+        border: 2px solid #fff;
+        
+        @include desktop {
+            height: 20vw;
+            width: 20vw;
+            left: -10vw;
+            top: -10vw;
+        }
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 48px;
+            height: 48px;
+            fill: #fff;
+            animation: up-down 750ms linear infinite;
+        }
+        @keyframes up-down {
+            0% {
+                transform: translate(-50%, calc(-50% - 10px)) rotate(90deg);
+            }
+        
+            50% {
+                transform: translate(-50%, calc(-50% + 10px)) rotate(90deg);
+            }
+        
+            100% {
+                transform: translate(-50%, calc(-50% - 10px)) rotate(90deg);
+            }
+        }
+    }
+    .mouse-cursor.glide-cursor {
+        height: 125px;
+        width: 125px;
+        left: -62.5px;
+        top: -62.5px;
+
+        &.drag {
+            height: 150px;
+            width: 150px;
+            left: -75px;
+            top: -75px;
+        }
+        span {
+            font-size: 16px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $main-bg;
+            font-weight: 700;
+        }   
+    }
+    .info-section .second-column .container {
+        position: relative;
+        overflow: hidden;
+        transition: 300ms;
+        transition-property: color;
+
+        &:hover {
+            color: $main-bg;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: var(--y);
+            left: var(--x);
+            background: #fff;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            opacity: 0;
+            transition: 700ms;
+            transition-property: transform, opacity, background-color;
+            z-index: -1;
+        }
+        &:hover::before {
+            transform: scale(40);
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.contact-section {
+    padding: 110px 0 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    h1 {
+        padding: 0 25px;
+    }
+    .first-column {
+        padding: 0 25px 50px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        span:first-child {
+            font-size: 20px;
+            font-weight: 900;
+        }
+    }
+    .second-column {
+        display: none;
+    }
+    @include laptop {
+        padding: 150px 0 0;
+        row-gap: 50px;
+    
+        h1 {
+            padding: 0 50px;
+        }
+        .grid-container {
+            border-top: $border;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .first-column {
+            border: none;
+            border-right: $border;
+            padding: 50px;
+
+            p {
+                max-width: 500px;
+            }
+        }
+        .second-column {
+            display: block;
+            padding: 50px;
+            position: relative;
+
+            .background {
+                width: 100%;
+                position: static;
+                transform: translateY(0);
+            }
+        }
+    }
+    @include desktop {
+        .first-column p {
+            max-width: fit-content;
+        }
+        .second-column .background {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}

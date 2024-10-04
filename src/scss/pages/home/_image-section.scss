@@ -1,0 +1,63 @@
+.image-section {
+    .glide__track {
+        border-bottom: $border;
+    }
+    .glide__slides {
+        background: #fff;
+    }
+    .glide__slide { 
+        height: inherit;
+        background: $main-bg;
+        position: relative;
+    }
+    .container {
+        width: 100%;
+        padding: 25px;
+        background: $main-bg;
+    }
+    .mobile-container {
+        padding: 5px 25px;
+        border-bottom: $border;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .glide__arrow {
+        padding: 5px;
+        background: transparent;
+        border: 0;
+
+        svg {
+            fill: white;
+            width: 32px;
+            height: 32px;
+        }
+    }
+    .glide__arrow--left svg {
+        transform: rotate(180deg);
+    }
+    .glide__bullets {
+        display: flex;
+        column-gap: 15px;
+    }
+    .glide__bullet {
+        width: 7px;
+        height: 7px;
+        background: #8c8c8c;
+        border-radius: 50%;
+    }
+    .glide__bullet--active {
+        background: #fff;
+    }
+    @include laptop {
+        .container {
+            padding: 50px;
+        }
+        .mobile-container {
+            padding: 5px 50px;
+        }
+    }
+}
+body.no-touch .mobile-container {
+    display: none;
+}

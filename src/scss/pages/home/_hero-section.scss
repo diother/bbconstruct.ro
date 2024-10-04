@@ -1,0 +1,113 @@
+.hero-section {
+    position: relative;
+    overflow: hidden;
+
+    .flex-container {
+        padding: 110px 25px 70px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .contact-us {
+        display: flex;
+        column-gap: 15px;
+        align-items: center;
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff;
+            position: relative;
+
+            svg {
+                width: 25px;
+                height: 25px;
+                fill: $main-bg;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        span {
+            font-size: 16px;
+            font-weight: 900;
+        }
+    }
+    .scroll-down {
+        display: none;
+        height: 200px;
+        width: 200px;
+        border: $border;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        z-index: -1;
+
+        svg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            width: 48px;
+            height: 48px;
+            fill: #fff;
+            animation: up-down 1000ms linear infinite;
+        }
+    }
+    @include tablet {
+        p {
+            max-width: 550px;
+        }
+        .contact-us .circle {
+            width: 48px;
+            height: 48px;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    @include laptop {
+        .flex-container {
+            padding: 150px 50px 50px;
+        }
+        .contact-us .circle {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    @include desktop {
+        .flex-container {
+            padding: 110px 50px 50px;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+        .scroll-down {
+            height: 15vw;
+            width: 15vw;
+        }
+    }
+}
+body.touch .scroll-down {
+    display: block;
+}
+@keyframes up-down {
+    0% {
+        transform: translate(-50%, calc(-50% - 7px)) rotate(90deg);
+    }
+    50% {
+        transform: translate(-50%, calc(-50% + 7px)) rotate(90deg);
+    }
+    100% {
+        transform: translate(-50%, calc(-50% - 7px)) rotate(90deg);
+    }
+}

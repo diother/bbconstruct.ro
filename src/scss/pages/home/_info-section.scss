@@ -1,0 +1,128 @@
+.info-section {
+    p {
+        padding: 0 25px 50px;
+    }
+    .grid-container {
+        position: relative;
+    }
+    .first-column {
+        padding: 50px 25px 50px;
+        border-top: $border;
+        border-bottom: $border;
+    }
+    .background {
+        z-index: -1;
+        width: 80vw;
+        margin: 50px auto 0;
+        pointer-events: none;
+        opacity: 50%;
+    }
+    .container {
+        padding: 25px;
+        border-bottom: $border;
+
+        span {
+            margin-top: 25px;
+            display: block;
+        }
+    }
+    .more-info {
+        padding: 50px 25px;
+        border-bottom: $border;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    li {
+        display: flex;
+        column-gap: 25px;
+        align-items: center;
+
+        svg {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            fill: #fff;
+        }
+    }
+    @include tablet {
+        .background {
+            width: 60vw;
+        }
+    }
+    @include laptop {
+        p {
+            padding: 0 50px 100px;
+        }
+        .grid-container {
+            border-top: $border;
+            border-bottom: $border;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            h1 {
+                font-size: 5vw;
+            }
+        }
+        .background {
+            margin-top: 0;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50%;
+        }
+        .first-column {
+            border: none;
+            border-right: $border;
+            padding: 50px;
+        }
+        .container {
+            padding: 50px;
+            border-bottom: $border;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 25px;
+
+            &:nth-child(3) {
+                border: none;
+            }
+            h2 {
+                max-width: 550px;
+            }
+            span {
+                text-align: right;
+                margin-top: 0;
+            }
+        }
+        .more-info {
+            padding: 100px 50px;
+
+            ul {
+                width: fit-content;
+                margin: 0 auto;
+                row-gap: 35px;
+            }
+            li {
+                width: fit-content;
+                column-gap: 35px;
+
+                svg {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+    }
+    @include desktop {
+        .background {
+            width: 40%;
+        }
+    }
+}

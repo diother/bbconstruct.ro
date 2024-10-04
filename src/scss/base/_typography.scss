@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=Oswald:wght@700&display=swap');
+
+html, body {
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+p, input, span, button {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 150%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+}
+h1 {
+    font-size: 56px;
+
+    @include laptop {
+        font-size: 80px;
+    }
+    @include desktop {
+        font-size: 120px;
+    }
+    &.display-heading {
+        @include tablet {
+            font-size: 11vw;
+        }
+        @include laptop {
+            font-size: 8.7vw;
+        }
+    }
+}
+h2 {
+    font-size: 32px;
+
+    @include laptop {
+        font-size: 3.2vw;
+    }
+    @include desktop { 
+        font-size: 5vw;
+    }
+    &.menu-heading {
+        font-size: 48px;
+    }
+}
+h3 {
+    font-size: 24px;
+
+    @include laptop {
+        font-size: 32px;
+    }
+}
+p, span {
+    &.display-text {
+        @include laptop {
+            font-size: 24px;
+            line-height: 130%;
+        }
+        @include desktop {
+            font-size: 32px;
+        }
+    }
+}

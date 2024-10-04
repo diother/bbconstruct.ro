@@ -1,0 +1,33 @@
+.video-section {
+    overflow: hidden;
+    margin: 150px 0; 
+    position: relative;
+
+    .container {
+        width: 140vw;
+        margin-left: -20vw;
+    }
+    video {
+        border: $border;
+        border-radius: 4px;
+    }
+    @include tablet {
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 4px;
+            padding: 0 25px;
+        }
+    }
+    @include laptop {
+        padding: 200px 0 400px;
+        
+        .container {
+            width: 100%;
+            max-width: 1050px;
+            display: block;
+            padding: 0 50px;
+            margin: auto;
+        }
+    }
+}

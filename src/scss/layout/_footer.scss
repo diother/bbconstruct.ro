@@ -1,0 +1,93 @@
+footer {
+    border-top: $border;
+    padding: 50px 0;
+    position: relative;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+        align-items: center;
+        padding: 0 25px 50px;
+    }
+    .logo {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    .social-container {
+        display: flex;
+        justify-content: center;
+        column-gap: 5px;
+        padding: 40px 25px 25px;
+        border-top: $border;
+
+        .social {
+            position: relative;
+        
+            &:hover svg {
+                fill: #fff;
+            }
+        
+            &:hover .square {
+                background: $main-bg;
+            }
+            .square {
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                z-index: -1;
+                transition: .3s ease-in-out;
+            }
+        }
+        svg {
+            width: 50px;
+            height: 50px;
+            fill: $main-bg;
+            transition: .3s ease-in-out;
+        }
+    }
+    .copyright {
+        display: table;
+        margin: 0 auto;
+        color: $secondary-color;
+        text-align: center;
+    }
+    @include tablet {
+        .container {
+            align-items: flex-start;
+            padding: 0 25px;
+        }
+        .social-container { 
+            border: none;
+            position: absolute;
+            padding: 0;
+            top: 40px;
+            right: 25px;
+        }
+        .copyright {
+            margin: none;
+            position: absolute;
+            right: 25px;
+            bottom: 50px;
+        }
+    }
+    @include laptop {
+        padding: 50px 50px 50px;
+
+        .container {
+            padding: 0;
+        }
+        .social-container {
+            right: 50px;
+        }
+        .copyright {
+            right: 50px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.slider-section {
+    background: $main-bg;
+    border-top: $border;
+    border-bottom: $border;
+    padding: 0 0 5.6px;
+    overflow: hidden;
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+    }
+    .container {
+        white-space: nowrap;
+        flex-shrink: 0;
+        display: flex;
+    }
+    @include laptop {
+        padding: 0 0 10px;
+    }
+    @include desktop {
+        padding: 0 0 12px;
+    }
+}

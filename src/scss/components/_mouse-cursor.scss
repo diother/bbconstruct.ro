@@ -1,0 +1,74 @@
+@include laptop {
+    body {
+        cursor: none;
+    }
+    .mouse-cursor {
+        display: block;
+        position: fixed;
+        height: 20px;
+        width: 20px;
+        left: -10px;
+        top: -10px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 10;
+        pointer-events: none;
+        transition: all 400ms cubic-bezier(.84,.06,.52,1.8);
+        transition-property: height, width, left, top, background-color, font-size;
+        overflow: hidden;
+    }
+    .fancy-button {
+        padding: 25px 50px;
+        border: $border;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        z-index: 1;
+        background-color: transparent;
+        overflow: hidden;
+        box-shadow: none;
+        cursor: none;
+    
+        &:hover {
+            color: $main-bg;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            aspect-ratio: 1 / 1;
+            background-color: #fff;
+            border-color: transparent;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            opacity: 0;
+            z-index: -1;
+            transition: 300ms;
+            transition-property: transform, opacity, background-color;
+        }
+        &:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    .mouse-cursor.trace-cursor {
+        height: 150px;
+        width: 150px;
+        left: -75px;
+        top: -75px;
+        background: none;
+        border: 2px solid #fff;
+    }
+    .trace-button {
+        transition: transform 300ms linear;
+        width: 60px;
+        height: 60px;
+
+        & > div {
+            transition: transform .3 ease;
+        }
+    }
+}

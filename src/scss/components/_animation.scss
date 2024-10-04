@@ -1,0 +1,55 @@
+[entrance-animation] {
+    opacity: 0;
+}
+[entrance-active][entrance-animation="fade-bottom"] {
+    animation: fade-bottom 350ms linear forwards;
+}
+[entrance-active][entrance-animation="fade-left"] {
+    animation: fade-left 350ms linear forwards;
+}
+[entrance-active][entrance-animation="fade-right"] {
+    animation: fade-right 350ms linear forwards;
+}
+[entrance-active][entrance-animation="fade-top"] {
+    animation: fade-top 350ms linear;
+}
+@keyframes fade-top {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "bbconstruct.ro-new",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2",
+    "locomotive-scroll": "^4.1.4",
+    "vanilla-lazyload": "^17.8.2"
+  }
+}
